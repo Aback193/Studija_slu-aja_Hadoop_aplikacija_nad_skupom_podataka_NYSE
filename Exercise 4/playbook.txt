@@ -1,0 +1,7 @@
+
+4 Definisan particioner => svaki simbol ide u svoj output fajl. TextPair.java comment out //result = prime * result + ((first == null) ? 0 : first.hashCode());
+
+hdfs dfs -rmr -skipTrash /out4
+yarn jar ex4.jar AvgStockVolMonthDriver -Dfilter.by.stockTicker=AA,GME /nyse_data /out4
+hdfs dfs -cat /out4/part-r-00000
+hdfs dfs -cat /out4/part-r-00001

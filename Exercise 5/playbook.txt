@@ -1,0 +1,10 @@
+
+5 Kustomizovan particioner => svaki simbol ide u svoj output fajl. Ticker name to go to specific reducer. TextPair.java uncomment result = prime * result + ((first == null) ? 0 : first.hashCode()); jer sada biramo automatski preko particionera
+
+Hardcoded biranje particionera prema prvom ili drugom kljucu. Prema drugom kljucu, svaki simbol dobija svoj OUT fajl
+
+
+hdfs dfs -rmr -skipTrash /out5
+yarn jar ex5.jar AvgStockVolMonthDriver -Dfilter.by.stockTicker=AA,GME /nyse_data /out5
+hdfs dfs -cat /out5/part-r-00001
+hdfs dfs -cat /out5/part-r-00002

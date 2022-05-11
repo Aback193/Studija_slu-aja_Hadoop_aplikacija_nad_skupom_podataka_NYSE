@@ -1,0 +1,30 @@
+hdfs dfs -rmr -skipTrash /ou*
+
+3.1 filtriranje input fajlova u kodu drajvera
+
+hdfs dfs -rmr -skipTrash /out31
+yarn jar ex31.jar FilterInDriver /nyse_data /out31
+hdfs dfs -cat /out31/part-r-00000 | head
+hdfs dfs -cat /out31/part-r-00000 | tail
+
+
+3.2 Properties filtriranje HARDCODED uncoment IF statements! MERGE?
+
+hdfs dfs -rmr -skipTrash /out32
+yarn jar ex32.jar AvgStockVolMonthDriver /nyse_data /out32
+hdfs dfs -cat /out32/part-r-00001
+
+
+3.3 Properties filtriranje CMD arg uncoment IF statements!
+
+hdfs dfs -rmr -skipTrash /out33
+yarn jar ex33.jar AvgStockVolMonthDriver -Dfilter.by.stockTicker=AA /nyse_data /out33
+hdfs dfs -cat /out33/part-r-00000
+
+3.4 SETUP Filtriranje
+
+hdfs dfs -rmr -skipTrash /out34
+yarn jar ex34.jar AvgStockVolMonthDriver -Dfilter.by.stockTicker=AA,GME /nyse_data /out34
+hdfs dfs -cat /out34/part-r-00001
+
+

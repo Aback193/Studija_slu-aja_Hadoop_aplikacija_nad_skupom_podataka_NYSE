@@ -1,0 +1,18 @@
+2.1 Lista sve fajlove unutar foldera datog preko argumenta
+
+yarn jar ex2.jar ListFiles /
+yarn jar ex2.jar ListFiles /nyse_data
+
+
+2.2 Izlista sve fajlove koji u nazivu imaju nyse_201[1-4].*
+
+yarn jar ex2.jar FilePattern /
+yarn jar ex2.jar FilePattern /nyse_data
+
+
+2.3 SPajanje svih fajlova sa inputa u jedan fajl
+
+hdfs dfs -rmr -skipTrash /merge
+yarn jar ex2.jar CopyMerge /nyse_data /merge
+hdfs dfs -cat /merge | head
+hdfs dfs -cat /merge | tail
