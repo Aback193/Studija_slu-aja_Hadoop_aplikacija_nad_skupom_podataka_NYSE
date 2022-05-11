@@ -1,0 +1,11 @@
+
+6 Kustomizovan particioner CMD arg => svaki simbol ide u svoj output fajl. Ticker name to go to specific reducer. TextPair.java uncomment result = prime * result + ((first == null) ? 0 : first.hashCode()); jer sada biramo automatski preko particionera
+
+Biranje particionera CMD arg (mesec ili simbol). Imamo jedan novi if u driveru. Output fajl po mesecu ili simbolu
+
+
+hdfs dfs -rmr -skipTrash /out6
+yarn jar ex6.jar AvgStockVolMonthDriver -Dfilter.by.stockTicker=AA,GME -Dpart=simbol /nyse_data /out6
+#yarn jar ex6.jar AvgStockVolMonthDriver -Dfilter.by.stockTicker=AA,GME -Dpart=mesec /nyse_data /out6
+hdfs dfs -cat /out6/part-r-00001
+hdfs dfs -cat /out6/part-r-00002

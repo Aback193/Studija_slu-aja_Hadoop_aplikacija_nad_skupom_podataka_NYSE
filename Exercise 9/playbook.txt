@@ -1,0 +1,23 @@
+hdfs dfs -put /home/ab/GIT_HADOOP/MapReduce/dataset/nyse_data /
+hdfs dfs -put /home/ab/GIT_HADOOP/MapReduce/dataset/nyse_data/nyse_2009.csv /
+hdfs dfs -put /home/ab/GIT_HADOOP/MapReduce/dataset/nyse_data/nyse_2014.csv /
+hdfs dfs -put /home/ab/GIT_HADOOP/MapReduce/dataset/nyse_data/companylist_noheader.csv /
+
+9. Compresija razlika
+
+hdfs dfs -rmr -skipTrash /out9
+yarn jar ex9.jar FilterInDriver /nyse_data /out9
+echo "******************************************************************"
+hadoop checknative -a
+echo "******************************************************************"
+hdfs dfs -ls /out9
+echo "******************************************************************"
+
+9.1 Snappy Compression library
+
+hdfs dfs -rmr -skipTrash /out91
+yarn jar ex91.jar FilterInDriver /nyse_data /out91
+echo "******************************************************************"
+hdfs dfs -ls /out91
+echo "******************************************************************"
+

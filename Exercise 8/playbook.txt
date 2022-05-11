@@ -1,0 +1,9 @@
+
+10. TOP 3 by VOL by Day
+
+
+hdfs dfs -rmr -skipTrash /out8
+yarn jar ex8.jar TopThreeStocksByVolumePerDayDriver /nyse_data /out8
+hdfs dfs -cat /out8/trademonth=201401/part-r-00005 | head
+hdfs dfs -cat /out8/trademonth=201402/part-r-00000 | head
+hdfs dfs -cat /out8/trademonth=201403/part-r-00001 | head
