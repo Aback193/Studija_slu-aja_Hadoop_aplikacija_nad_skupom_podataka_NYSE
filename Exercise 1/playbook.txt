@@ -1,0 +1,14 @@
+hdfs dfs -put /home/ab/GIT_HADOOP/MapReduce/dataset/nyse_data /
+hdfs dfs -put /home/ab/GIT_HADOOP/MapReduce/dataset/nyse_data/nyse_2009.csv /
+hdfs dfs -put /home/ab/GIT_HADOOP/MapReduce/dataset/nyse_data/nyse_2014.csv /
+hdfs dfs -put /home/ab/GIT_HADOOP/MapReduce/dataset/nyse_data/companylist_noheader.csv /
+
+1. Stock VOl mesecno
+
+hdfs dfs -rmr -skipTrash /out1
+yarn jar ex1.jar FilterInDriver /nyse_data /out1
+echo "******************************************************************"
+hdfs dfs -cat /out1/part-r-00000 | head
+echo "******************************************************************"
+hdfs dfs -cat /out1/part-r-00000 | tail
+echo "******************************************************************"
