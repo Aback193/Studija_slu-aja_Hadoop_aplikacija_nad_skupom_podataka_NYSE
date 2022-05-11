@@ -1,0 +1,7 @@
+
+10. TOP 3 by VOL by Day
+
+
+hdfs dfs -rmr -skipTrash /out10
+yarn jar ex10.jar TopThreeStocksByVolumePerDayDriver /nyse_data /out10
+# NO TRADE DAYS WILL BE PRINTED OUT
